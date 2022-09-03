@@ -1,22 +1,27 @@
 import dpkt
 import socket
 import pygeoip
+import os
+
 
 gi = pygeoip.GeoIP('GeoLiteCity.dat')
-
+PACKETS = './Packets'
 def main():
-    file = open('packets.pcap','rb')
-    pcap = dpkt.pcap.Reader(file)
+    kml_content = ''
     kml_header = '<?xml version="1.0" encoding="UTF-8"?> \n<kml xmlns="http://www.opengis.net/kml/2.2">\n<Document>\n'\
-    '<Style id="transBluePoly">' \
-                '<LineStyle>' \
-                '<width>1.5</width>' \
-                '<color>501400E6</color>' \
-                '</LineStyle>' \
-                '</Style>'
+        '<Style id="transBluePoly">' \
+                    '<LineStyle>' \
+                    '<width>1.5</width>' \
+                    '<color>501400E6</color>' \
+                    '</LineStyle>' \
+                    '</Style>'
     kml_footer ='</Document>\n</kml>\n'
-    kml_doc = kml_header+map_IPs(pcap)+kml_footer
-    with open('IPs.kml','w') as f:
+    for filename in os.listdir(PACKETS):
+        file = open(os.path.join(PACKETS,filename),'rb')
+        pcap = dpkt.pcap.Reader(file)
+        kml_content += map_IPs(pcap)
+    kml_doc = kml_header + kml_content + kml_footer
+    with open('IPs.kml','w+') as f:
         f.write(kml_doc)
     print(kml_doc)
 
