@@ -1,4 +1,12 @@
 # NET-VIZ
+<a href="https://twitter.com/Evilsturn">
+<img alt="Twitter Handle" src="https://brandvisibility.com.ng/wp-content/uploads/2022/02/Twitter-Logo-2010-2012.png" width="165"/>
+
+![Contributors](https://img.shields.io/github/contributors/Evilsturn/NetViz?style=plastic)
+![Forks](https://img.shields.io/github/forks/Evilsturn/NetViz)
+![Stars](https://img.shields.io/github/stars/Evilsturn/NetViz)
+![Issues](https://img.shields.io/github/issues/Evilsturn/NetViz)
+
 
 ## Description
 ### Net-Viz is a network traffic visualization tool that parses through PCAP files and generates a KML file which can be imported over to Google Maps to Visalize the Data. 
