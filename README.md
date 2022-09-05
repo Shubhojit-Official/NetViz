@@ -31,4 +31,5 @@ This script is entirely written in Python 3 so make sure you have it installed.
   ![image](https://user-images.githubusercontent.com/62092586/188264367-a27ec608-2158-43f3-add5-0302a305813c.png)
 - #### Browse to the local repository then select the Packets folder also make sure to select the Save as type to pcap
   ![image](https://user-images.githubusercontent.com/62092586/188264506-9fb39d40-d468-4fa0-a2d9-138b5e2d7ac3.png)
-- #### Now run the net-viz.py script using `python net-viz.py`
+- #### Now run the net-viz.py script using `python net-viz.py`, replace `python` with `python3` in the command if python is downloaded from the appstore or in UNIX systems.
+
